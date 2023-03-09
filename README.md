@@ -5,9 +5,9 @@
   Add your open source license, GitHub uses Creative Commons Attribution 4.0 International.
 -->
 
-# Introduction to GitHub
+# Introduction to Seismic Data Processing using Seismic Unix
 
-_Get started using GitHub in less than an hour._
+_Get started using Seismic Unix._
 
 
 <!-- 
@@ -20,15 +20,14 @@ _Get started using GitHub in less than an hour._
 -->
 
 <details id=0>
-<summary><h2>Welcome</h2></summary>
+<summary><h2>Welcome to Seismic Unix</h2></summary>
 
-People use GitHub to build some of the most advanced technologies in the world. Whether you’re visualizing data or building a new game, there’s a whole community and set of tools on GitHub that can help you do it even better. GitHub Skills’ “Introduction to GitHub” course guides you through everything you need to start contributing in less than an hour.
+In this document we will explain the seismic data processing sequence using open source software Seismic Unix. This is very benefic for students and for academic research purposes.
 
-- **Who is this for**: New developers, new GitHub users, and students.
-- **What you'll learn**: We'll introduce repositories, branches, commits, and pull requests.
-- **What you'll build**: We'll make a short Markdown file you can use as your [profile README](https://docs.github.com/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme).
-- **Prerequisites**: None. This course is a great introduction for your first day on GitHub.
-- **How long**: This course is four steps long and takes less than one hour to complete.
+- **Who is this for**: Students, Geophysicists and people curious about learning Seismic Unix.
+- **What you'll learn**: I will introduce basics of seismic data processing using [SU](https://wiki.seismic-unix.org/start)
+- **What you'll build**: Try to start yourself a project in SDP using [SU](https://wiki.seismic-unix.org/start).
+- **Prerequisites**: Basics in Geophysics. This lecture is a great start for your first hands on SDP..
 
 **Course tips:**
 
