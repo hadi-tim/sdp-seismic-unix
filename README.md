@@ -57,7 +57,7 @@ People use GitHub to build some of the most advanced technologies in the world. 
   Encourage users to open new tabs for steps!
 -->
 
-<details id=1 open>
+<details id=1>
 <summary><h2>Step 1: Create a branch</h2></summary>
 
 _Welcome to "Introduction to GitHub"! :wave:_
@@ -106,7 +106,7 @@ The branch will automatically switch to the one you have just created. The **mai
   Define terms and link to docs.github.com.
 -->
 
-<details id=2>
+<details id=2 open>
 <summary><h2>Step 2: Commit a file</h2></summary>
 
 _You created a branch! :tada:_
