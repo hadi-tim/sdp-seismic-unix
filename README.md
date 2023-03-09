@@ -29,24 +29,12 @@ In this document we will explain the seismic data processing sequence using open
 - **What you'll build**: Try to start yourself a project in SDP using [SU](https://wiki.seismic-unix.org/start).
 - **Prerequisites**: Basics in Geophysics. This lecture is a great start for your first hands on SDP..
   **Example of a Raw Shot**
-  ![Example of a Raw Shot](/images/raw_shot.png)
 
 **Course tips:**
 
-* Glossary terms will be _emphasised_ and linked to their definition. 
-* This course includes optional video links. Look for the :tv: emoji and follow the link to the video.
+* First of all ensure about the succussfull instalaltion of Seismic Unix, by following the guide to installation.
+* The SU installton guide is for Ubuntu on Windows, so you need another software package [Xming](http://www.straightrunning.com/XmingNotes/), virtual server to be able   to display your outputs.
 
-## How to start this course
-
-1. Right-click **Start course** and open the link in a new tab.
-   <br />[![start-course](https://user-images.githubusercontent.com/1221423/218596841-0645fe1a-4aaf-4f51-9ab3-8aa2d3fdd487.svg)](https://github.com/skills/introduction-to-github/generate)
-2. In the new tab, follow the prompts to create a new repository.
-   - For owner, choose your personal account or an organization to host the repository.
-   - We recommend creating a public repository—private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
-   - Name the repository something easy for you to recognize and remember.
-   ![Create a new repository](/images/create-new-repository.png)
-
-3. After your new repository is created, wait about 20 seconds, then refresh your new repository page. Follow the step-by-step instructions in the new repository's README. [GitHub Actions](https://docs.github.com/en/actions) will automatically close this welcome and open the first step.
 
 </details>
 
@@ -59,13 +47,11 @@ In this document we will explain the seismic data processing sequence using open
 -->
 
 <details id=1>
-<summary><h2>Step 1: Create a branch</h2></summary>
+<summary><h2>Download and Install Seismic unix</h2></summary>
 
 _Welcome to "Introduction to GitHub"! :wave:_
 
-**What is GitHub?**: GitHub is a collaboration platform that uses _[Git](https://docs.github.com/get-started/quickstart/github-glossary#git)_ for versioning. GitHub is a popular place to share and contribute to [open-source](https://docs.github.com/get-started/quickstart/github-glossary#open-source) software.
-<br>:tv: [Video: What is GitHub?](https://www.youtube.com/watch?v=pBy1zgt0XPc)
-
+**Where you can find SU?**: Seismic Un*x is an open source seismic processing package and can be downloded from [CWP website wiki page](https://wiki.seismic-unix.org/start). starting from this page you can find all the documentation, tutorials and data examples.
 **What is a repository?**: A _[repository](https://docs.github.com/get-started/quickstart/github-glossary#repository)_ is a project containing files and folders. A repository tracks versions of files and folders. For more information, see "[About repositories](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories)" from GitHub Docs.
 <br>:tv: [Video: Exploring a repository](https://www.youtube.com/watch?v=R8OAwrcMlRw)
 
