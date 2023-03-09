@@ -28,6 +28,8 @@ In this document we will explain the seismic data processing sequence using open
 - **What you'll learn**: I will introduce basics of seismic data processing using [SU](https://wiki.seismic-unix.org/start)
 - **What you'll build**: Try to start yourself a project in SDP using [SU](https://wiki.seismic-unix.org/start).
 - **Prerequisites**: Basics in Geophysics. This lecture is a great start for your first hands on SDP..
+  **Example of a Raw Shot**
+  ![Example of a Raw Shot](/images/raw_shot.png)
 
 **Course tips:**
 
