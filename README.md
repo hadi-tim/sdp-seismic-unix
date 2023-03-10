@@ -94,7 +94,7 @@ suplane | suximage title="test"
 ```
 **CONGRATULATIONS ON YOUR FIRST SEISMIC UNIX DISPLAY!!!**
 
-### 5. [Seismic Unix data formats](#dataformats)
+### 5. Seismic Unix data formats
 
 </details>
 
