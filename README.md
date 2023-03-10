@@ -1,42 +1,20 @@
 ## Table of contents
-### 1. [How to install Seismic Unix on Windows](#Introduction)
-### 2. [Ubuntu on Windows](#paragraph1)
-### 3. [Installing Xming Server](#subparagraph1)
-### 4. [Installing Seismic Unix](#install)
-.
+* [How to install Seismic Unix on Windows](#how-to-install-seismic-unix-on-windows)
+* [Ubuntu on Windows](#ubuntu-on-windows)
+* [Installing Xming Server](#installing-xming-server)
+* [Installing Seismic Unix](#installing-seismic-unix)
+* [Seismic Unix data formats](#seismic-unix-data-formats)
 
-.
-
-.
-
-.
-
-.
-
-.
-
-.
-
-.
-
-.
-
-.
-
-.
-
-.
-
-### 1. How to install Seismic Unix on Windows
+### How to install Seismic Unix on Windows
 This tutorial will illustrate step by step on how to process seismic data using Seismic Unix. Before starting our Seismic Data Processing journey, some installations need to be made. We will go through all**
-### 2. Ubuntu on Windows
+### Ubuntu on Windows
 
 The perfect thing to do is to install a Linux partition in your machine (laptop or desktop). In my case I installed Ubuntu [WSL](https://ubuntu.com/wsl) which is a complete Ubuntu terminal environment in on Windows, which is called Windows Subsystem for Linux (WSL)
 
-### 3. Installing Xming Server
+### Installing Xming Server
 In order to run SU modules, an X window server will be needed. in our case I used Xming, which need to be launched after installing Seismic Unix. Here is the [Xming server website for download](http://www.straightrunning.com/XmingNotes/)
 
-### 4. Installing Seismic Unix
+### Installing Seismic Unix
 Before installing SU, we need to set some environment variables. Add following commands to your profile like .zshrc or .bashrc.
 
 ```Shell
@@ -93,8 +71,6 @@ In order to check run the command below:
 suplane | suximage title="test"
 ```
 **CONGRATULATIONS ON YOUR FIRST SEISMIC UNIX DISPLAY!!!**
-
-### 5. Seismic Unix data formats
 
 </details>
 
