@@ -8,8 +8,9 @@
   2. [Setting geometry](#setting-geometry)
     - [Python code for geometry headers update](#python-code-for-geometry-headers-update)
   3. [Viewing shot gathers QC](#viewing-shot-gathers-(QC))
-  4. [Sort data to CMP](#sort-data-to-cmp)
-    - [CMP locations QC and binning](#cmp-locations-qc-and-binning)
+  4. [CMP locations QC and binning](#cmp-locations-qc-and-binning)
+  5. [Sort data to CMP](#sort-data-to-cmp)
+
  
 
 
@@ -286,6 +287,7 @@ n1=9 indicates number of columns in the geometry text file. After appying the ge
 ![surange_after_geom](https://user-images.githubusercontent.com/124686555/234369239-5789a888-ba74-4da9-87cf-50555bc8823d.png)
 
 ### Viewing shot gathers QC
+
 ```Shell
 suwind key=ep min=100 max=100 < data_geom2.su | suximage key=offset cmap=hsv4 perc=90\
                 title="shot100 after geometry" label1="Time(s)" label2="Offsset(m)"  &
@@ -319,11 +321,36 @@ gv SrcRcv_loc_map.ps
 
 <img src="https://user-images.githubusercontent.com/124686555/234381419-9f76a478-76a2-4482-9c09-303f75a0cece.png" >
 
+### CMP locations QC and binning
+
+It is well known that a straight 2D line, a CMP location is defined as the midpoint between the source and the receiver locations. On a crooked line (our case), CMPs may do not lie on the line of source and receiver.\
+So, let’s plot the CMPs locations using same script as before. But this time calculating the midpoint locations of CMPs using the provided information in the geometry text file.
+
+```gawk
+#!/bin/bash
+
+gawk '{print ($1+$5)/2,($2+$6)/2}'<myheaders_new.txt |a2b > cmploc.bin
+	cat cmploc.bin srcloc.bin rcvloc.bin |
+	psgraph n=70782,251,782 linecolor=green,red,blue wbox=16 hbox=3.5 \
+	d1num=1000 d2num=1000 \
+	labelsize=9 grid1=solid grid2=solid gridcolor=gray marksize=0.5,1,1 \
+	gridwidth=0 linewidth=0,0 title="Source Receiver and CMPs locations"\
+	label1=Easting label2=Northing > SrcRcvCmp_loc_map.ps
+```
+Let's plot via the command:
+```sh
+gv SrcRcvCmp_loc_map.ps
+```
+<img src="https://user-images.githubusercontent.com/124686555/234388018-59f9db96-d83f-4769-adca-c2d6a4014f6e.png">
+
 
 ### Sort data to CMP
 
 
-### CMP locations QC and binning
+
+
+
+
 </details>
 
 <!--
