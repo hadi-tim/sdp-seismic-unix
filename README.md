@@ -3,9 +3,9 @@
 * [Ubuntu on Windows](#ubuntu-on-windows)
 * [Installing Xming Server](#installing-xming-server)
 * [Installing Seismic Unix](#installing-seismic-unix)
-* [Seismic processing of 2D line](#Seismic-processing-of-2D-line)
-  1. test
-  2. test
+* [Seismic processing of 2D line](#seismic-processing-of-2D-line)
+  1. [Reading and viewing seismic data](#reading-and-viewing-seismic-data)
+
 
 ### How to install Seismic Unix on Windows
 This tutorial will illustrate step by step on how to process seismic data using Seismic Unix. Before starting our Seismic Data Processing journey, some installations need to be made. We will go through all**
@@ -97,7 +97,7 @@ graph TD;
     N-->O(Migration)
 
 ```
-
+1. Reading and viewing seismic data
 </details>
 
 <!--
