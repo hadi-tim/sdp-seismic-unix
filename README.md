@@ -104,13 +104,16 @@ graph TD;
 
 ```
 ### Reading and viewing seismic data
-as explained before, our data is a 2D vibroseis data, Line 001. The data is in SEGY format, and need to be read into SU data format. This is done via:
+As mentionned before at the beginning of thes notes, our data is in SEGY format and need to be converted to SU format. This is done via:
 ```Shell
-segyread tape=Line_001.sgy endian=0 |suwind key="trid" min="1">data.su
+segyread tape=Line_001.sgy endian=0 |suwind key="trid" min="1" > data.su
 ```
-The above line of code converts data from SEGy to SU format and in addition will remove the Auxilliary channels\
-"-1" = AUX data\
-"1" = Seismic data.\
+In addition to conversion the code above removes the Auxilliary channels,using key `trid` and `min=1`\
+
+trid: Trace identification\
+-1 = Aux data\
+1 = Seismic data\
+
 We may use **`surange`** to see if the header settings are correct as shown below:
 ```Shell
 surange < data.su
