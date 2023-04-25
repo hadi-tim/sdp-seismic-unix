@@ -343,6 +343,45 @@ gv SrcRcvCmp_loc_map.ps
 ```
 <img src="https://user-images.githubusercontent.com/124686555/234388018-59f9db96-d83f-4769-adca-c2d6a4014f6e.png">
 
+It is well noticed in the graph that we are dealing with a crooked line, CMPs are not falling between source and receiver, so a a possible solution to this is to do binning. let's tak teh receiver line, then we can project all actual CMP locations to the nearest point on the receiver line.\
+In order to choose the best parameter for the maximum offset distance between a cmp location and the cmp line which is supposed to be the `receiver line`. After several tests as described int the shell script, the Maximum offline distance that we choose is 200m.
+
+```sh
+#!/bin/bash
+
+# Set up a command to concatenate some plot files for comparing off-line distances accepted
+convert="cat "
+
+# Set the CMP interval
+dcdp=12.5
+
+# Loop through several offline distances and compare results.
+for distmax in 12.5 25 50 100 200 500
+do
+	echo Running crooked line binning for maximimum offline distance $distmax into $dcdp m bins
+
+	sucdpbin <data_geom2.su xline=684590.2,697315.1,703807.7 yline=3837867.6,3839748.8,3841277.2 verbose=2 dcdp=$dcdp distmax=$distmax 2>cdp.log |suwind key=cdp min=1 > geomdata_cmps_$distmax.su
+
+	echo Creating chart data
+	suchart < geomdata_cmps_$distmax.su key1=cdp key2=offset >plotdata outpar=par
+
+	echo Running Postscript graphing routine
+	psgraph <plotdata par=par linewidth=0 mark=0 marksize=1 labelsize=6 titlesize=12 linecolor=blue wbox=13 hbox=10 >plot$distmax.ps title="Maximum offline distance $distmax m  - $dcdp m Bins"
+
+	convert="$convert plot$distmax.ps"
+done
+
+# Now concatenate the Postscript files in the same order they were created, so the resulting multipage file can be opened and the effects of changing the offline distance parameter
+$convert > crookedLine_bining.ps
+```
+Let's plot the stacking chart, which is a plot of the header CDP field versus the offset field. We can notice the white stripes indicating missing shots.
+
+```sh
+gv crookedLine_bining.ps
+```
+
+<img src="https://user-images.githubusercontent.com/124686555/234390895-f5e2a4c2-3ec3-402f-88e7-be505b4c15d8.png">
+
 
 ### Sort data to CMP
 
