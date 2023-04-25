@@ -118,9 +118,16 @@ We may use **`surange`** to see if the header settings are correct as shown belo
 ```Shell
 surange < data.su
 ```
-[image](https://github.com/hadi-tim/sdp-seismic-unix/tree/main/images/surange.png?raw=true)
+<img src="https://user-images.githubusercontent.com/124686555/234352239-7417ed65-2d3a-45f2-b294-3b718d3454d6.png" width="600" height="400">
 
-<img src="https://github.com/hadi-tim/sdp-seismic-unix/tree/main/images/surange.png" width="1000" height="110">
+#### Windowing and viewing data
+As an example, the code below run a display in wiggles for one shot gather `shot gather FFID#231`. It is always a good idea to look at some small part of the data to check if data exists. 
+
+```Shell
+suwind key=fldr min=231 max=231 < seismic.su | suximage perc=99 &
+```
+
+<img src="https://user-images.githubusercontent.com/124686555/234355282-6d04788f-ac47-47b7-8a4b-7281738021de.png" width="600">
 
 ### Setting geometry
 
