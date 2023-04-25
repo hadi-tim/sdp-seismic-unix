@@ -276,7 +276,12 @@ with open('geometry.txt', 'w', newline='\n') as f:
         writer.writerow(data)
     f.write('\n')
 ```
+After getting the geometry information in a text files format, it is mandatory to copnvert the text file into a binary format so we can update the header information intothe data traces.
 
+```Shell
+a2b < geometry.txt n1=9 > myheaders.bin
+```
+n1=9 indicates number of columns in the geometry text file.
 
 ### Viewing shot gathers QC
 
