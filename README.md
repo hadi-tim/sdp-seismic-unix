@@ -118,7 +118,7 @@ We may use **`surange`** to see if the header settings are correct as shown belo
 ```Shell
 surange < data.su
 ```
-<img src="https://user-images.githubusercontent.com/124686555/234352239-7417ed65-2d3a-45f2-b294-3b718d3454d6.png" width="600" height="400">
+<img src="https://user-images.githubusercontent.com/124686555/234352239-7417ed65-2d3a-45f2-b294-3b718d3454d6.png" width="700" height="500">
 
 #### Windowing and viewing data
 As an example, the code below run a display in wiggles for one shot gather `shot gather FFID#231`. It is always a good idea to look at some small part of the data to check if data exists. 
@@ -127,7 +127,7 @@ As an example, the code below run a display in wiggles for one shot gather `shot
 suwind key=fldr min=231 max=231 < seismic.su | suximage perc=99 &
 ```
 
-<img src="https://user-images.githubusercontent.com/124686555/234355282-6d04788f-ac47-47b7-8a4b-7281738021de.png" width="600">
+<img src="https://user-images.githubusercontent.com/124686555/234355282-6d04788f-ac47-47b7-8a4b-7281738021de.png" width="700">
 
 ### Setting geometry
 Geometry definition is one of the most time consuming in processing especially for 2D data. This process is for converting the observed field parameters recorded in observer logs into trace headers.\
@@ -286,6 +286,38 @@ n1=9 indicates number of columns in the geometry text file. After appying the ge
 ![surange_after_geom](https://user-images.githubusercontent.com/124686555/234369239-5789a888-ba74-4da9-87cf-50555bc8823d.png)
 
 ### Viewing shot gathers QC
+```Shell
+suwind key=ep min=100 max=100 < data_geom2.su | suximage key=offset cmap=hsv4 perc=90\
+                title="shot100 after geometry" label1="Time(s)" label2="Offsset(m)"  &
+```
+<img src="https://user-images.githubusercontent.com/124686555/234378605-c5f9ecbd-3bc4-4eb0-a441-a1bebe0e785f.png" width="700">
+
+Another QC we can look at the source and receiver locations, first thing to do is to create the binary files that contain the coordinates information (X and Y) for both source and receiver.
+
+```Gawk
+gawk '{print $1,$2}' < geometry.txt |sort|uniq|a2b > srcloc.bin
+gawk '{print $5,$6}' < geometry.txt |sort|uniq|a2b > rcvloc.bin
+```
+Now we have the binary information of the source and receiver locations in those two files, we concatenate them and we plot data  using psgraph. The process is described in a bash script `04_geom_qc1.job`
+
+```sh
+#!/bin/bash
+
+cat srcloc.bin rcvloc.bin |
+	psgraph n=251,782 linecolor=red,blue wbox=16 hbox=3.5 \
+	d1num=1000 d2num=1000 \
+	labelsize=9 grid1=solid grid2=solid gridcolor=gray marksize=1,1 \
+	gridwidth=0 linewidth=0,0 title="Source & Receiver Locations" \
+	label1=Easting label2=Northing > SrcRcv_loc_map.ps
+```
+The generated post graph file .ps can be viewed using line command:
+
+```sh
+gv SrcRcv_loc_map.ps
+```
+
+
+<img src="https://user-images.githubusercontent.com/124686555/234381419-9f76a478-76a2-4482-9c09-303f75a0cece.png" >
 
 
 ### Sort data to CMP
