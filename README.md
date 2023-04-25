@@ -99,7 +99,7 @@ graph TD;
     N-->O(Migration)
 
 ```
-# 1. Reading and viewing seismic data
+### 1. Reading and viewing seismic data
 </details>
 
 <!--
