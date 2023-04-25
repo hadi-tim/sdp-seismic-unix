@@ -115,7 +115,7 @@ We may use **`surange`** to see if the header settings are correct as shown belo
 ```Shell
 surange < data.su
 ```
-
+[image](https://github.com/hadi-tim/sdp-seismic-unix/tree/main/images/surange.png?raw=true)
 
 ### Setting geometry
 
