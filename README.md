@@ -131,8 +131,27 @@ suwind key=fldr min=231 max=231 < seismic.su | suximage perc=99 &
 <img src="https://user-images.githubusercontent.com/124686555/234355282-6d04788f-ac47-47b7-8a4b-7281738021de.png" width="700">
 
 ### Setting geometry
-Geometry definition is one of the most time consuming in processing especially for 2D data. This process is for converting the observed field parameters recorded in observer logs into trace headers.\
-For this purpose I wrote a python code which uses the SPS information as input and outputs a text file containig the geometry information (the X, Y coordinates for source and receiver, the offset, and the static information.
+Geometry definition is one of the most time consuming in processing especially for 2D data. This process is for converting the observed field parameters recorded in observer logs into trace headers.
+I wrote the Python code below `sps_check.ipynb` to check the SPS information regarding, total number of shots, total number of receivers...etc.\
+The program output the following information:
+
+```sh
+============= SPS FILE=============
+First Shot Point:       701
+Last Shot Point:      1201
+Total number of shots:  251 VPs
+============= RPS FILE=============
+First Receiver Point:       561
+Last Shot Point:      1342
+Total number of receivers:  782 Receiver
+============= XPS FILE=============
+First Field File ID:   231
+Last Field File ID:   481
+Total number of traces:  70782
+```
+I worked on another Python script which uses the SPS information as input and outputs a text file containig the geometry information (the X, Y coordinates for source and receiver, the offset, and the static information.
+
+
 
 ### Python code for geometry headers update
 Below is the code to run in a Python environment.
