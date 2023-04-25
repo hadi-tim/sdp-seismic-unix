@@ -120,6 +120,8 @@ surange < data.su
 ```
 [image](https://github.com/hadi-tim/sdp-seismic-unix/tree/main/images/surange.png?raw=true)
 
+<img src="https://github.com/hadi-tim/sdp-seismic-unix/tree/main/images/surange.png?raw=true" width="1000" height="110">
+
 ### Setting geometry
 
 ### Python code for geometry headers update
