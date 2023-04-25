@@ -276,12 +276,14 @@ with open('geometry.txt', 'w', newline='\n') as f:
         writer.writerow(data)
     f.write('\n')
 ```
-After getting the geometry information in a text files format, it is mandatory to copnvert the text file into a binary format so we can update the header information intothe data traces.
+Before proceeding to the geometry, we need to convert the geometry information from the text file into a binary format, then load the binary information into data to apply the geometry.
 
 ```Shell
 a2b < geometry.txt n1=9 > myheaders.bin
 ```
-n1=9 indicates number of columns in the geometry text file.
+n1=9 indicates number of columns in the geometry text file. After appying the geometry we can notice that headers are correctly updated including the offset and X 1 Y coordinates.
+
+![surange_after_geom](https://user-images.githubusercontent.com/124686555/234369239-5789a888-ba74-4da9-87cf-50555bc8823d.png)
 
 ### Viewing shot gathers QC
 
