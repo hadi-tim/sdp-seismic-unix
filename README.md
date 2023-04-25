@@ -3,7 +3,7 @@
 * [Ubuntu on Windows](#ubuntu-on-windows)
 * [Installing Xming Server](#installing-xming-server)
 * [Installing Seismic Unix](#installing-seismic-unix)
-* [Seismic Unix data formats](#seismic-unix-data-formats)
+* [Seismic processing of 2D line](#Seismic-processing-of-2D-line)
 
 ### How to install Seismic Unix on Windows
 This tutorial will illustrate step by step on how to process seismic data using Seismic Unix. Before starting our Seismic Data Processing journey, some installations need to be made. We will go through all**
@@ -71,7 +71,7 @@ In order to check run the command below:
 suplane | suximage title="test"
 ```
 **CONGRATULATIONS ON YOUR FIRST SEISMIC UNIX DISPLAY!!!**
-
+### Seismic processing of 2D line
 </details>
 
 <!--
