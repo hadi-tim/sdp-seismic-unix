@@ -4,6 +4,7 @@
 * [Installing Xming Server](#installing-xming-server)
 * [Installing Seismic Unix](#installing-seismic-unix)
 * [Seismic processing of 2D line](#Seismic-processing-of-2D-line)
+- title
 
 ### How to install Seismic Unix on Windows
 This tutorial will illustrate step by step on how to process seismic data using Seismic Unix. Before starting our Seismic Data Processing journey, some installations need to be made. We will go through all**
