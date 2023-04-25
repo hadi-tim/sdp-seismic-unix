@@ -6,7 +6,7 @@
 * [Seismic processing of 2D line](#seismic-processing-of-2D-line)
   1. [Reading and viewing seismic data](#reading-and-viewing-seismic-data)
   2. [Setting geometry](#setting-geometry)
-  3. [Viewing shot gathers (QC)](viewing-shot-gathers-(QC)]
+  3. [Viewing shot gathers QC](viewing-shot-gathers-(QC))
 
 
 ### How to install Seismic Unix on Windows
@@ -99,7 +99,7 @@ graph TD;
     N-->O(Migration)
 
 ```
-1. Reading and viewing seismic data
+# 1. Reading and viewing seismic data
 </details>
 
 <!--
