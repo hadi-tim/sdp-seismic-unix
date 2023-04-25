@@ -4,9 +4,12 @@
 * [Installing Xming Server](#installing-xming-server)
 * [Installing Seismic Unix](#installing-seismic-unix)
 * [Seismic processing of 2D line](#seismic-processing-of-2D-line)
-  * 1. [Reading and viewing seismic data](#reading-and-viewing-seismic-data)
+  1. [Reading and viewing seismic data](#reading-and-viewing-seismic-data)
   2. [Setting geometry](#setting-geometry)
-  3. [Viewing shot gathers QC](viewing-shot-gathers-(QC))
+        * [Python code for geometry headers update](#python-code-for-geometry-headers-update)
+  4. [Viewing shot gathers QC](#viewing-shot-gathers-(QC))
+  5. [Sort data to CMP](#sort-data-to-cmp)
+       * [CMP locations QC and binning](#cmp-locations-qc-and-binning)
 
 
 ### How to install Seismic Unix on Windows
@@ -99,7 +102,22 @@ graph TD;
     N-->O(Migration)
 
 ```
-### 1. Reading and viewing seismic data
+### Reading and viewing seismic data
+
+
+
+### Setting geometry
+
+### Python code for geometry headers update
+
+
+### Viewing shot gathers QC
+
+
+### Sort data to CMP
+
+
+### CMP locations QC and binning
 </details>
 
 <!--
