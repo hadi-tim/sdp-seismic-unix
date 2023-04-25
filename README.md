@@ -6,10 +6,11 @@
 * [Seismic processing of 2D line](#seismic-processing-of-2D-line)
   1. [Reading and viewing seismic data](#reading-and-viewing-seismic-data)
   2. [Setting geometry](#setting-geometry)
-        * [Python code for geometry headers update](#python-code-for-geometry-headers-update)
-  4. [Viewing shot gathers QC](#viewing-shot-gathers-(QC))
-  5. [Sort data to CMP](#sort-data-to-cmp)
-       * [CMP locations QC and binning](#cmp-locations-qc-and-binning)
+    - [Python code for geometry headers update](#python-code-for-geometry-headers-update)
+  3. [Viewing shot gathers QC](#viewing-shot-gathers-(QC))
+  4. [Sort data to CMP](#sort-data-to-cmp)
+    - [CMP locations QC and binning](#cmp-locations-qc-and-binning)
+ 
 
 
 ### How to install Seismic Unix on Windows
