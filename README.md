@@ -74,7 +74,30 @@ suplane | suximage title="test"
 ```
 **CONGRATULATIONS ON YOUR FIRST SEISMIC UNIX DISPLAY!!!**
 ### Seismic processing of 2D line
-For this tutorial we are going to explain step by step on how to process 2D seismic data using Seismic Unix. The data for this document can be accessed for free [here!](https://dataunderground.org/dataset/poland-vibroseis/resource/96dfd0be-61c8-4edb-9d04-c7d2aeb16d27)
+For this tutorial we are going to explain step by step on how to process 2D seismic data using Seismic Unix. The data for this document can be accessed for free [here!](https://dataunderground.org/dataset/poland-vibroseis/resource/96dfd0be-61c8-4edb-9d04-c7d2aeb16d27).
+Below is the proposed processing flow chart that we will follow.
+
+```mermaid
+graph TD;
+    A(SEGY Input)-->B(Coonvert to SU format);
+    B-->C(Geometry update);
+    C-->D(Shot gathers QC);
+    C-->E(Elevation Statics);
+    D-->E;
+    E-->F(Trace Editing);
+    F-->G(Ground roll removal, F-K filter);
+    G-->H(Deconvolution);
+    H-->I(Band Pass Filter);
+    I-->J(CMP Sort);
+    J-->K(Velocity Analysis);
+    K-->L(NMO Correction);
+    J-->L;
+    L-->M(Mute)
+    M-->N(Stack)
+    N-->O(Migration)
+
+```
+
 </details>
 
 <!--
