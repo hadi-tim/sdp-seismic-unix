@@ -550,9 +550,16 @@ A script made by John W. Stockwell; [iva.sh](https://github.com/hadi-tim/sdp-sei
 * Constant Velocity Stack of the selected CMP number
 
 <img src="https://user-images.githubusercontent.com/124686555/235536415-866a75a0-d903-4767-93ca-19b3b27a50d1.png" width="800">
-The two displays below show CMP#1900 after NMO correction and the corresponding stacking velocity profile.\
-\
+
+The two displays below show CMP#1900 after NMO correction and the corresponding stacking velocity profile.
+
 <img src="https://user-images.githubusercontent.com/124686555/235536428-311d5021-e45b-4190-9586-a2b0732ef350.png" width="600">
+
+The first pass of velocity picking showed a good stack result. The pictures below is a comparison between the previous stack after deconvolution and the stack after deconvolution but using the first pass of picked velocities.
+
+<img src="https://user-images.githubusercontent.com/124686555/235539403-e12f9d99-f06e-44c9-a65d-6bde1082771f.png" width="600">
+
+<img src="https://user-images.githubusercontent.com/124686555/235539412-e6281920-3661-428f-aac8-799744026035.png" width="600">
 
 </details>
 
