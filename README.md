@@ -1,29 +1,29 @@
-## Table of contents
+# Table of contents
 * [How to install Seismic Unix on Windows](#how-to-install-seismic-unix-on-windows)
 * [Ubuntu on Windows](#ubuntu-on-windows)
 * [Installing Xming Server](#installing-xming-server)
 * [Installing Seismic Unix](#installing-seismic-unix)
 * [Seismic processing of 2D line](#seismic-processing-of-2D-line)
-  1. [Reading and viewing seismic data](#reading-and-viewing-seismic-data)
-  2. [Setting geometry](#setting-geometry)
-    - [Python code for geometry headers update](#python-code-for-geometry-headers-update)
-  3. [Viewing shot gathers QC](#viewing-shot-gathers-(QC))
-  4. [CMP locations QC and binning](#cmp-locations-qc-and-binning)
-  5. [Sort data to CMP](#sort-data-to-cmp)
+  * [Reading and viewing seismic data](#reading-and-viewing-seismic-data)
+  * [Setting geometry](#setting-geometry)
+  * [Python code for geometry headers update](#python-code-for-geometry-headers-update)
+  * [Viewing shot gathers QC](#viewing-shot-gathers-(QC))
+  * [CMP locations QC and binning](#cmp-locations-qc-and-binning)
+  * [Sort data to CMP](#sort-data-to-cmp)
 
  
 
 
-### How to install Seismic Unix on Windows
+## How to install Seismic Unix on Windows
 This tutorial will illustrate step by step on how to process seismic data using Seismic Unix. Before starting our Seismic Data Processing journey, some installations need to be made. We will go through all**
-### Ubuntu on Windows
+## Ubuntu on Windows
 
 The perfect thing to do is to install a Linux partition in your machine (laptop or desktop). In my case I installed Ubuntu [WSL](https://ubuntu.com/wsl) which is a complete Ubuntu terminal environment in on Windows, which is called Windows Subsystem for Linux (WSL)
 
-### Installing Xming Server
+## Installing Xming Server
 In order to run SU modules, an X window server will be needed. in our case I used Xming, which need to be launched after installing Seismic Unix. Here is the [Xming server website for download](http://www.straightrunning.com/XmingNotes/)
 
-### Installing Seismic Unix
+## Installing Seismic Unix
 Before installing SU, we need to set some environment variables. Add following commands to your profile like .zshrc or .bashrc.
 
 ```Shell
@@ -80,7 +80,7 @@ In order to check run the command below:
 suplane | suximage title="test"
 ```
 **CONGRATULATIONS ON YOUR FIRST SEISMIC UNIX DISPLAY!!!** :satisfied:
-### Seismic processing of 2D line
+## Seismic processing of 2D line
 For this tutorial we are going to explain step by step on how to process 2D seismic data using Seismic Unix. The data for this document can be accessed for free [here!](https://dataunderground.org/dataset/poland-vibroseis/resource/96dfd0be-61c8-4edb-9d04-c7d2aeb16d27).
 Below is the proposed processing flow chart that we will follow.
 
