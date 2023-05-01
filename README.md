@@ -486,14 +486,59 @@ In order to QC the output before and after the BPF, let’s check the stacks bef
 
 <img src="https://user-images.githubusercontent.com/124686555/235498056-bacdef8a-0f93-4050-ac6f-031c779a0c3b.png" height="450" width="800">
 
-Spiking deconvolution
+Deconvolution
 Deconvolution in an inverse process which consists of removing the effect of the waveform. Basically we  process of removing the
-effect of a waveform, to produce a desired output. In practice the objectif is to achieve a better estimate of the gelogical layers in term of amplitude, polarity and depth/time.
-[image](https://user-images.githubusercontent.com/124686555/235517071-8d68d3bf-8702-4051-ac08-ee3c60912aa4.png)
+effect of a waveform, to produce a desired output. In practice the objectif is to achieve a better estimate of the gelogical layers in term of increasing the temporal resolution of the reflector.
+Before proceeding to deconvolution, first we need to perfoem the autocorrelation to have a better estimate of the deconvolution parameters and undestanding the the multiple energy behavior.
 
+The code below is the code to perform the autocorrelation and deconvolution test. The main parameters that we should pay attention to are minlag and maxlag, while ntout is the number of autocorrelation samples that will be produced. You can test with different pnoise.
 
+```sh
+#!/bin/sh
 
+minlag=0.02
+maxlag=0.1
+pnoise=0.001
+ntout=120
+indata=geomdata_bin200_fk_bpf.su
 
+rm -f tmp*
+
+# Data selection you will probably need to use sugain to remove any decay in amplitudes with time that may result from geometric spreading
+suwind < $indata key=ep min=120 max=120 > tmp0
+sugain < tmp0 agc=1 wagc=0.2 > tmp1
+
+# One Shot display
+suximage < tmp1 perc=90 title="Before deconvolution" \
+                        label1="Time(s)" \
+                        lebel2="Trace" &
+
+# Autocorrelation before deconvolution
+suacor < tmp1 suacor ntout=$ntout | suximage perc=90 title="Autocorrelation before deconvolution" \
+                        label1="Time(s)" \
+                        lebel2="Trace" &
+
+# Deconvolution
+supef < tmp1 > tmp2 minlag=$minlag maxlag=$maxlag pnoise=$pnoise 
+
+# After Deconvolution
+
+suximage < tmp2 perc=90 title="After deconvolution" \
+                        label1="Time(s)" \
+                        lebel2="Trace" &
+
+# Autocorrelation after deconvolution
+suacor < tmp2 suacor ntout=$ntout | suximage perc=90 title="Autocorrelation after deconvolution" \
+                        label1="Time(s)" \
+                        lebel2="Trace" &
+
+# Apply deconvolution to al the data
+supef < geomdata_bin200_fk_bpf.su > geomdata_bin200_fk_bpf_decon.su minlag=0.02 maxlag=0.1 pnoise=0.001 
+
+rm -f tmp*
+```
+<img src="https://user-images.githubusercontent.com/124686555/235521740-79a87306-648f-4188-bca4-dfb0225f8252.png">
+<img src="https://user-images.githubusercontent.com/124686555/235521754-e5bc59a2-bd8c-44f8-9891-9370f68cfeb9.png">
 
 
 </details>
