@@ -540,6 +540,13 @@ rm -f tmp*
 <img src="https://user-images.githubusercontent.com/124686555/235521740-79a87306-648f-4188-bca4-dfb0225f8252.png">
 <img src="https://user-images.githubusercontent.com/124686555/235521754-e5bc59a2-bd8c-44f8-9891-9370f68cfeb9.png">
 
+### Velocity Analysis
+A script made by John W. Stockwell, a Copyright (c) Colorado School of Mines. This script provide an interactive velocity picking session. It will first ask the user to input number of picks. You are then asked to state the CMP number for the first pick, then it will diplay three plots:
+* Semblance plot of the selected CMP number
+* Plot of the selected CMP gather
+* Constant Velocity Stack of the selected CMP number
+
+
 
 </details>
 
