@@ -491,7 +491,10 @@ Deconvolution in an inverse process which consists of removing the effect of the
 effect of a waveform, to produce a desired output. In practice the objectif is to achieve a better estimate of the gelogical layers in term of increasing the temporal resolution of the reflector.\
 Before proceeding to deconvolution, first we need to perfoem the autocorrelation to have a better estimate of the deconvolution parameters and undestanding the the multiple energy behavior.
 
+<img src="https://user-images.githubusercontent.com/124686555/235535746-a58e63b8-fa03-4b79-a1c3-62d7bfed7e72.png" width="800" height="600">
+
 The code below is the code to perform the autocorrelation and deconvolution test. The main parameters that we should pay attention to are minlag and maxlag, while ntout is the number of autocorrelation samples that will be produced. You can test with different pnoise.
+
 
 ```sh
 #!/bin/sh
@@ -537,16 +540,19 @@ supef < geomdata_bin200_fk_bpf.su > geomdata_bin200_fk_bpf_decon.su minlag=0.02 
 
 rm -f tmp*
 ```
-<img src="https://user-images.githubusercontent.com/124686555/235521740-79a87306-648f-4188-bca4-dfb0225f8252.png">
-<img src="https://user-images.githubusercontent.com/124686555/235521754-e5bc59a2-bd8c-44f8-9891-9370f68cfeb9.png">
+<img src="https://user-images.githubusercontent.com/124686555/235521740-79a87306-648f-4188-bca4-dfb0225f8252.png" width="800">
+<img src="https://user-images.githubusercontent.com/124686555/235521754-e5bc59a2-bd8c-44f8-9891-9370f68cfeb9.png" width="800">
 
 ### Velocity Analysis
-A script made by John W. Stockwell, [iva.sh](https://github.com/hadi-tim/sdp-seismic-unix/blob/main/script/iva.sh) a Copyright (c) Colorado School of Mines. This script provide an interactive velocity picking session. It will first ask the user to input number of picks. You are then asked to state the CMP number for the first pick, then it will diplay three plots:
+A script made by John W. Stockwell; [iva.sh](https://github.com/hadi-tim/sdp-seismic-unix/blob/main/script/iva.sh) a Copyright (c) Colorado School of Mines. This script provide an interactive velocity picking session. It will first ask the user to input number of picks. You are then asked to state the CMP number for the first pick, then it will diplay three plots:
 * Semblance plot of the selected CMP number
 * Plot of the selected CMP gather
 * Constant Velocity Stack of the selected CMP number
 
-<%@include file="/script/iva.sh"%>
+<img src="https://user-images.githubusercontent.com/124686555/235536415-866a75a0-d903-4767-93ca-19b3b27a50d1.png" width="800">
+The two displays below show CMP#1900 after NMO correction and the corresponding stacking velocity profile.\
+\
+<img src="https://user-images.githubusercontent.com/124686555/235536428-311d5021-e45b-4190-9586-a2b0732ef350.png" width="600">
 
 </details>
 
