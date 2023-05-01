@@ -11,8 +11,11 @@
   * [CMP locations QC and binning](#cmp-locations-qc-and-binning)
   * [Sort data to CMP](#sort-data-to-cmp)
   * [Gain testing](#gain-testing)
-  * [NMO Correction and brute stack](nmo-correction-and-brute-stack)
-
+  * [NMO Correction and brute stack](#nmo-correction-and-brute-stack)
+  * [Filtering in the (F-k) domain](#filtering-in-the-f-k-domain)
+  * [Band Pass Filter testing](#band-pass-filter-testing)
+  * [Deconvolution](#deconvolution)
+  * [Velocity Analysis](#velocity-analysis)
  
 
 
@@ -440,7 +443,7 @@ suximage < stack.su cmp=hsv5 title="Brute stack V0" perc=90 &
 ```
 <img src="https://user-images.githubusercontent.com/124686555/235463368-c08ac25d-0cd4-4f99-a4e9-4220a88b4b7a.png" height="400" width="800">
 
-### Filtering in the (F,k) domain
+### Filtering in the (F-k) domain
 To attenuate the coherent noise such as ground roll, we used (f, k) filetering as a first step as it targets the linear noise taking into consideration the slope or the dip of the event.\
 For this purpose I did numerous tests on one shot gather. Once you are satisfied with the result, you can run the (f;k) filter on the whole data as showed in the script below.\
 ```sh
