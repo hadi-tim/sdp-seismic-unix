@@ -399,7 +399,7 @@ Let's plot the stacking chart, which is a plot of the header CDP field versus th
 gv crookedLine_bining.ps
 ```
 
-<img src="https://user-images.githubusercontent.com/124686555/234390895-f5e2a4c2-3ec3-402f-88e7-be505b4c15d8.png">
+<img src="https://user-images.githubusercontent.com/124686555/234390895-f5e2a4c2-3ec3-402f-88e7-be505b4c15d8.png" height="500" width="800">
 
 
 ### Sort data to CMP
@@ -436,7 +436,7 @@ sunmo < data.cdp vnmo=1700,2750,3000 tnmo=0.1,1.0,2.0 \
 	| sustack > stack.su
 suximage < stack.su cmp=hsv5 title="Brute stack V0" perc=90 &
 ```
-<img src="https://user-images.githubusercontent.com/124686555/235463368-c08ac25d-0cd4-4f99-a4e9-4220a88b4b7a.png">
+<img src="https://user-images.githubusercontent.com/124686555/235463368-c08ac25d-0cd4-4f99-a4e9-4220a88b4b7a.png" height="400" width="800">
 
 ### Filtering in the (F,k) domain
 To attenuate the coherent noise such as ground roll, we used (f, k) filetering as a first step as it targets the linear noise taking into consideration the slope or the dip of the event.\
