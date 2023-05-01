@@ -461,11 +461,27 @@ The images below shows the shots before, after and the rejected data, respective
 <img src="https://user-images.githubusercontent.com/124686555/235469868-c81c34d3-13f5-4aa0-8e85-9227603dcdfb.png" height="400" width="800">
 
 ### Band Pass Filter testing
-before proceeding to BPF, it is important to know the frequency content of our data byt transfromfing our data from (x,t) domain to (x,f) domain via the command line:
+before proceeding to BPF, it is important to know the frequency content of our data byt transfromfing our data from (x,t) domain to (x,f) domain, where Frequency is on the vertical scale, and trace number is on the horizontal.
 ```sh
 suspecfx < stk_fk.su | suximage key=cdp title="F-X SPECTRUM" label2="CMP" label1="Frequency (Hz)" cmap="hsv2" bclip=45
 ```
 <img src="https://user-images.githubusercontent.com/124686555/235475595-7689b376-387b-4f2d-a24b-ba6c1acbaff8.png" height="400" width="800">
+
+Zooming in our data, we can notice that the energy is mainly concentrated is the frequency band between 15 and 45 Hz.\
+
+For the BPF testing, I did several Band Pass Filter panels, below is the result of one test using a combination of frequencies from, 10,15,55,60. The spectrum is obtained after transforming the prestack data from time domain to frequency domain using Gabor Transform.
+
+The [Gabor transform](https://en.wikipedia.org/wiki/Gabor_transform), as explained in wikipidia is named after Dennis Gabor, is a special case of the short-time Fourier transform. It is used to determine the sinusoidal frequency and phase content of local sections of a signal as it changes over time. 
+
+<img src="https://user-images.githubusercontent.com/124686555/235477896-6dede5ba-ce87-4359-a6b5-bdda739f435d.png" height="800" width="800">
+
+Compare the two frequency spectrums. Notice how the sub-20Hz sections is subdued by the filter applied.
+Now we apply the BPF to all the data via the command:
+```sh
+sufilter < geomshots_bin200_fk.su f=10,15,55,60 > geomshots_bin200_fk_bpf.su
+```
+In order to QC the output before and after the BPF, let’s check the stacks before and after. Notice, there is a better continuity in the shallow part of the stack.
+
 
 
 </details>
