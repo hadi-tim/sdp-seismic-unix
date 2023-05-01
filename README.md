@@ -10,6 +10,8 @@
   * [Viewing shot gathers QC](#viewing-shot-gathers-(QC))
   * [CMP locations QC and binning](#cmp-locations-qc-and-binning)
   * [Sort data to CMP](#sort-data-to-cmp)
+  * [Gain testing](#gain-testing)
+  * [NMO Correction and brute stack](nmo-correction-and-brute-stack)
 
  
 
