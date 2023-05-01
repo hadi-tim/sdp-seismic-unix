@@ -418,7 +418,7 @@ sunmo < data.cdp vnmo=1700,2750,3000 tnmo=0.1,1.0,2.0 \
 	| sustack > stack.su
 suximage < stack.su cmp=hsv5 title="Brute stack V0" perc=90 &
 ```
-<img src="stak_before_fk](https://user-images.githubusercontent.com/124686555/235463368-c08ac25d-0cd4-4f99-a4e9-4220a88b4b7a.png">
+<img src="https://user-images.githubusercontent.com/124686555/235463368-c08ac25d-0cd4-4f99-a4e9-4220a88b4b7a.png">
 
 
 
