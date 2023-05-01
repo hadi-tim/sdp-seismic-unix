@@ -407,6 +407,24 @@ To sort the data from shot to cmp domain we use `susort`:
 ```sh
 susort cdp offset < data.su
 ```
+### Gain testing
+```sh
+#!/bin/sh
+
+suwind < data_geom2.su key=ep min=32 max=32 > data_geom_ep32.su
+
+suxwigb < data_geom_ep32.su title="Ungained Data" &
+sugain < data_geom_ep32.su scale=5.0 | suxwigb title="Scaled data" &
+sugain < data_geom_ep32.su agc=1 wagc=.01 | suxwigb title="AGC=1 WAGC=.01 sec &
+sugain < data_geom_ep32.su agc=1 wagc=.2 | suxwigb title="AGC=1 WAGC=.2 sec &
+sugain < data_geom_ep32.su pbal=1 | suxwigb title="traces balanced by rms" &
+sugain < data_geom_ep32.su qbal=1 | suxwigb title="traces balanced by quantile" &
+sugain < data_geom_ep32.su mbal=1 | suxwigb title="traces balanced by mean" &
+sugain < data_geom_ep32.su tpow=2 | suxwigb title="t squared factor applied" &
+sugain < data_geom_ep32.su tpow=.5 | suxwigb title="square root t factor applied" &
+```
+<img src="https://user-images.githubusercontent.com/124686555/235467240-7bed593a-7e4a-4dcc-a476-0f54fa93c1c9.png" height="600">
+
 ### NMO Correction and brute stack
 As a preliminary step, we can run the brute stack flow in this stage as a QC and in order to compare with further stacks as we move forward in our processing.
 the stack has an AGC applied.
@@ -420,7 +438,27 @@ suximage < stack.su cmp=hsv5 title="Brute stack V0" perc=90 &
 ```
 <img src="https://user-images.githubusercontent.com/124686555/235463368-c08ac25d-0cd4-4f99-a4e9-4220a88b4b7a.png">
 
+### Filtering in the (F,k) domain
+To attenuate the coherent noise such as ground roll, we used (f, k) filetering as a first step as it targets the linear noise taking into consideration the slope or the dip of the event.\
+For this purpose I did numerous tests on one shot gather. Once you are satisfied with the result, you can run the (f;k) filter on the whole data as showed in the script below.\
+```sh
+#!/bin/bash
 
+indata=geomdata_bin200_d2.su
+
+sudipfilt < $indata dt=0.002 dx=0.025\
+	slopes=-0.5,-0.3,0.3,0.5 amps=0,1,1,0 bias=0 > geomdata_bin200_fk.su
+```
+With: 
+ - amps=1,1,1,1 (do nothing)
+ - amps=1,0,0,1 (The reject zone)
+ - amps=0,1,1,0 (The pass zone)
+
+The images below shows the shots before, after and the rejected data, respectively with their corresponding (f,k) spectrums.
+
+<img src="https://user-images.githubusercontent.com/124686555/235468292-92120233-3f91-4e93-a56f-3cba79737945.png" height="400" width="1000">
+<img src="https://user-images.githubusercontent.com/124686555/235469828-6052f000-58e3-46a6-88d2-eb789e0b2415.png" height="400" width="1000">
+<img src="https://user-images.githubusercontent.com/124686555/235469868-c81c34d3-13f5-4aa0-8e85-9227603dcdfb.png" height="400" width="1000">
 
 </details>
 
