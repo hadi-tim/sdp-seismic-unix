@@ -546,7 +546,7 @@ A script made by John W. Stockwell, a Copyright (c) Colorado School of Mines. Th
 * Plot of the selected CMP gather
 * Constant Velocity Stack of the selected CMP number
 
-
+<%@include file="/script/iva.sh"%>
 
 </details>
 
