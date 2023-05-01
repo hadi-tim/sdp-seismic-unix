@@ -456,9 +456,17 @@ With:
 
 The images below shows the shots before, after and the rejected data, respectively with their corresponding (f,k) spectrums.
 
-<img src="https://user-images.githubusercontent.com/124686555/235468292-92120233-3f91-4e93-a56f-3cba79737945.png" height="400" width="1000">
-<img src="https://user-images.githubusercontent.com/124686555/235469828-6052f000-58e3-46a6-88d2-eb789e0b2415.png" height="400" width="1000">
-<img src="https://user-images.githubusercontent.com/124686555/235469868-c81c34d3-13f5-4aa0-8e85-9227603dcdfb.png" height="400" width="1000">
+<img src="https://user-images.githubusercontent.com/124686555/235468292-92120233-3f91-4e93-a56f-3cba79737945.png" height="400" width="800">
+<img src="https://user-images.githubusercontent.com/124686555/235469828-6052f000-58e3-46a6-88d2-eb789e0b2415.png" height="400" width="800">
+<img src="https://user-images.githubusercontent.com/124686555/235469868-c81c34d3-13f5-4aa0-8e85-9227603dcdfb.png" height="400" width="800">
+
+### Band Pass Filter testing
+before proceeding to BPF, it is important to know the frequency content of our data byt transfromfing our data from (x,t) domain to (x,f) domain via the command line:
+```sh
+suspecfx < stk_fk.su | suximage key=cdp title="F-X SPECTRUM" label2="CMP" label1="Frequency (Hz)" cmap="hsv2" bclip=45
+```
+<img src="https://user-images.githubusercontent.com/124686555/235475595-7689b376-387b-4f2d-a24b-ba6c1acbaff8.png" height="400" width="800">
+
 
 </details>
 
