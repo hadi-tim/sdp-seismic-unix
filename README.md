@@ -482,6 +482,18 @@ sufilter < geomshots_bin200_fk.su f=10,15,55,60 > geomshots_bin200_fk_bpf.su
 ```
 In order to QC the output before and after the BPF, let’s check the stacks before and after. Notice, there is a better continuity in the shallow part of the stack.
 
+<img src="https://user-images.githubusercontent.com/124686555/235498044-2d40b80d-c7ba-4224-896f-47054254cb55.png" height="450" width="800">
+
+<img src="https://user-images.githubusercontent.com/124686555/235498056-bacdef8a-0f93-4050-ac6f-031c779a0c3b.png" height="450" width="800">
+
+Spiking deconvolution
+Deconvolution in an inverse process which consists of removing the effect of the waveform. Basically we  process of removing the
+effect of a waveform, to produce a desired output. In practice the objectif is to achieve a better estimate of the gelogical layers in term of amplitude, polarity and depth/time.
+[image](https://user-images.githubusercontent.com/124686555/235517071-8d68d3bf-8702-4051-ac08-ee3c60912aa4.png)
+
+
+
+
 
 
 </details>
