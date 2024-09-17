@@ -86,7 +86,7 @@ suplane | suximage title="test"
 ```
 **CONGRATULATIONS ON YOUR FIRST SEISMIC UNIX DISPLAY!!!** :satisfied:
 ## Seismic processing of 2D line
-For this tutorial we are going to explain step by step on how to process 2D seismic data using Seismic Unix. The data for this document can be accessed for free [here!](https://dataunderground.org/dataset/poland-vibroseis/resource/96dfd0be-61c8-4edb-9d04-c7d2aeb16d27).
+For this tutorial we are going to explain step by step on how to process 2D seismic data using Seismic Unix. The data for this document can be accessed for free [here!](https://wiki.seg.org/wiki/2D_Vibroseis_Line_001).
 Below is the proposed processing flow chart that we will follow.
 
 ```mermaid
