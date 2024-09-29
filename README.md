@@ -316,7 +316,7 @@ n1=9 indicates number of columns in the geometry text file. After appying the ge
 suwind key=ep min=100 max=100 < data_geom2.su | suximage key=offset cmap=hsv4 perc=90\
                 title="shot100 after geometry" label1="Time(s)" label2="Offsset(m)"  &
 ```
-<img src="https://user-images.githubusercontent.com/124686555/234378605-c5f9ecbd-3bc4-4eb0-a441-a1bebe0e785f.png" width="700">
+<img src="https://github.com/hadi-tim/sdp-seismic-unix/blob/4b4aa53cb7b588b6ef113ad7d97d86eefc7b4744/images/shot_after_geom.png" width="600">
 
 Another QC we can look at the source and receiver locations, first thing to do is to create the binary files that contain the coordinates information (X and Y) for both source and receiver.
 
